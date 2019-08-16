@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require_relative '../boot'
+require_relative 'support/application_helper'
+require 'pry'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

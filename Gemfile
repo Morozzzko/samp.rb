@@ -19,4 +19,6 @@ group :tools do
   gem 'rubocop-daemon', '~> 0.3.1'
 end
 
-gem "dry-system", "~> 0.12.0"
+gem 'dry-system', '~> 0.12.0'
+
+gem 'dry-events', '~> 0.2.0'
