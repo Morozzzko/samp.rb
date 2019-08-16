@@ -18,10 +18,14 @@ RSpec.describe Vehicles::Services::PurchaseVehicle do
   it 'triggers "vehicles.purchased" with id: 1' do
     purchase_vehicle
 
-    expect(results).not_to be_empty
+    expect(results.map(&:payload)).to match(
+      [
+        vehicle: Vehicles::Entities::Vehicle
+      ]
+    )
   end
 
-  it 'works' do
+  it 'returns newly created vehicle' do
     expect(purchase_vehicle).to be_a(
       Vehicles::Entities::Vehicle
     )
