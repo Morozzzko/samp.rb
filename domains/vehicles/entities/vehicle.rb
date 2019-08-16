@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
+require_relative 'owner'
+
 module Vehicles
   module Entities
     class Vehicle < Dry::Struct
-      attribute :id, Types::Integer.constrained(gt: 0)
+      attribute :identity, Types::String
+      attribute :owner, Owner
     end
   end
 end

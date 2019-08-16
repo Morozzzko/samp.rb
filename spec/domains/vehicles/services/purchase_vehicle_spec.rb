@@ -22,8 +22,8 @@ RSpec.describe Vehicles::Services::PurchaseVehicle do
   end
 
   it 'works' do
-    expect(purchase_vehicle).to eql(
-      Vehicles::Entities::Vehicle[id: 1]
+    expect(purchase_vehicle).to be_a(
+      Vehicles::Entities::Vehicle
     )
   end
 end

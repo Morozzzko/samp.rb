@@ -9,7 +9,8 @@ module Vehicles
         event_bus.publish('vehicles.purchased', id: 1)
 
         Entities::Vehicle[
-          id: 1
+          identity: 'abcdef',
+          owner: Entities::Individual[full_name: 'John Doe']
         ]
       end
     end
