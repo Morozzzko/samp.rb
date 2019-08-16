@@ -3,15 +3,19 @@
 module Vehicles
   module Services
     class PurchaseVehicle
-      include Inject['event_bus']
+      include Inject[
+        'event_bus',
+        repo: 'vehicles.repositories.vehicle_repository'
+      ]
 
       def call
-        event_bus.publish('vehicles.purchased', id: 1)
-
-        Entities::Vehicle[
+        vehicle = Entities::Vehicle[
           identity: 'abcdef',
           owner: Entities::Individual[full_name: 'John Doe']
         ]
+        event_bus.publish('vehicles.purchased', vehicle: vehicle)
+
+        repo.create!(vehicle)
       end
     end
   end
