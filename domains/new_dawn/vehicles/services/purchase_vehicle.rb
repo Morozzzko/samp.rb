@@ -6,7 +6,7 @@ module NewDawn
       class PurchaseVehicle
         include Inject[
           'event_bus',
-          repo: 'vehicles.repositories.vehicle_repository'
+          repo: 'vehicles.repositories.vehicle_repo'
         ]
 
         def call

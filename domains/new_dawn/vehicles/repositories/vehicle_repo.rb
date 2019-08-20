@@ -3,7 +3,7 @@
 module NewDawn
   module Vehicles
     module Repositories
-      class VehicleRepository
+      class VehicleRepo < Repository
         def create!(vehicle)
           vehicle
         end
