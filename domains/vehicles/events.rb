@@ -12,10 +12,10 @@ module Vehicles
 
   module Events
     def self.register_events(event_bus)
-      event_bus.register_event('vehicle_purchased')
-      event_bus.register_event('vehicle_destroyed')
-      event_bus.register_event('vehicle_impounded')
-      event_bus.register_event('vehicle_sold')
+      event_bus.register_event('vehicle.purchased')
+      event_bus.register_event('vehicle.destroyed')
+      event_bus.register_event('vehicle.impounded')
+      event_bus.register_event('vehicle.sold')
     end
 
     def self.subscribe_to_events(event_bus); end

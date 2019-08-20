@@ -10,6 +10,7 @@ module NewDawn
     config.root = File.join(__dir__, '../..')
 
     config.name = :new_dawn
+    config.default_namespace = :new_dawn
 
     config.auto_register = %w[domains lib]
 
