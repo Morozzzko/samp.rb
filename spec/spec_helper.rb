@@ -2,6 +2,7 @@
 
 require_relative 'support/application_helper'
 require 'pry'
+require 'simplecov'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

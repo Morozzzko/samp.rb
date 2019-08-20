@@ -6,6 +6,8 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 group :test, :development do
   gem 'pry-byebug', '~> 3.7'
+
+  gem 'simplecov', '~> 0.17.0'
 end
 
 group :test do
