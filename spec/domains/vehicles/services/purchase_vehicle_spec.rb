@@ -22,14 +22,14 @@ RSpec.describe NewDawn::Vehicles::Services::PurchaseVehicle do
 
     expect(results.map(&:payload)).to match(
       [
-        event: Vehicles::Events::VehiclePurchased
+        event: NewDawn::Vehicles::Events::VehiclePurchased
       ]
     )
   end
 
   it 'returns newly created vehicle' do
     expect(purchase_vehicle).to be_a(
-      Vehicles::Entities::Vehicle
+      NewDawn::Vehicles::Entities::Vehicle
     )
   end
 end
