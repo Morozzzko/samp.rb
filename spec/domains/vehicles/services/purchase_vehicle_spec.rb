@@ -2,7 +2,7 @@
 
 require 'vehicles/services/purchase_vehicle'
 
-RSpec.describe Vehicles::Services::PurchaseVehicle do
+RSpec.describe NewDawn::Vehicles::Services::PurchaseVehicle do
   subject(:purchase_vehicle) { described_class.new.call }
 
   let(:results) { [] }

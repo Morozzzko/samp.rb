@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
-module Vehicles
-  module Repositories
-    class VehicleRepository
-      def create!(vehicle)
-        vehicle
+module NewDawn
+  module Vehicles
+    module Repositories
+      class VehicleRepository
+        def create!(vehicle)
+          vehicle
+        end
       end
     end
   end

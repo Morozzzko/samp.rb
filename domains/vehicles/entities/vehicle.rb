@@ -2,11 +2,13 @@
 
 require_relative 'owner'
 
-module Vehicles
-  module Entities
-    class Vehicle < Dry::Struct
-      attribute :identity, Types::String
-      attribute :owner, Owner
+module NewDawn
+  module Vehicles
+    module Entities
+      class Vehicle < Dry::Struct
+        attribute :identity, Types::String
+        attribute :owner, Owner
+      end
     end
   end
 end

@@ -2,9 +2,11 @@
 
 require_relative 'vehicle_event'
 
-module Vehicles
-  module Events
-    class VehicleSold < VehicleEvent
+module NewDawn
+  module Vehicles
+    module Events
+      class VehicleSold < VehicleEvent
+      end
     end
   end
 end

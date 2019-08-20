@@ -1,23 +1,16 @@
 # frozen_string_literal: true
 
-Dir[File.join(__dir__, 'events/*.rb')].each do |path|
-  require_relative path
-end
+module NewDawn
+  module Vehicles
+    module Events
+      def self.register_events(event_bus)
+        event_bus.register_event('vehicles.purchased')
+        event_bus.register_event('vehicles.destroyed')
+        event_bus.register_event('vehicles.impounded')
+        event_bus.register_event('vehicles.sold')
+      end
 
-module Vehicles
-  Event = Events::VehiclePurchased |
-          Events::VehicleDestroyed |
-          Events::VehicleImpounded |
-          Events::VehicleSold
-
-  module Events
-    def self.register_events(event_bus)
-      event_bus.register_event('vehicle.purchased')
-      event_bus.register_event('vehicle.destroyed')
-      event_bus.register_event('vehicle.impounded')
-      event_bus.register_event('vehicle.sold')
+      def self.subscribe_to_events(event_bus); end
     end
-
-    def self.subscribe_to_events(event_bus); end
   end
 end
