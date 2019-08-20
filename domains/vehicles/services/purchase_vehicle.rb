@@ -13,7 +13,10 @@ module Vehicles
           identity: 'abcdef',
           owner: Entities::Individual[full_name: 'John Doe']
         ]
-        event_bus.publish('vehicles.purchased', vehicle: vehicle)
+        event_bus.publish(
+          'vehicles.purchased',
+          event: Events::VehiclePurchased[vehicle: vehicle]
+        )
 
         repo.create!(vehicle)
       end

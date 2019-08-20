@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 require 'dry/system/container'
-
-# FIXME: it should be loaded by NewDawn::Application
-require_relative '../../lib/types'
+require 'dry/inflector'
 
 require_relative 'event_bus'
 
@@ -14,6 +12,11 @@ module NewDawn
     config.name = :new_dawn
 
     config.auto_register = %w[domains lib]
+
+    config.inflector = Dry::Inflector.new do |inflections|
+      inflections.acronym('API')
+      inflections.acronym('SAMP')
+    end
 
     load_paths!('lib', 'domains', 'system')
 

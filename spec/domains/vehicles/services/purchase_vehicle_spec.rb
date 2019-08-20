@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'vehicles/services/purchase_vehicle'
+
 RSpec.describe Vehicles::Services::PurchaseVehicle do
   subject(:purchase_vehicle) { described_class.new.call }
 
@@ -20,7 +22,7 @@ RSpec.describe Vehicles::Services::PurchaseVehicle do
 
     expect(results.map(&:payload)).to match(
       [
-        vehicle: Vehicles::Entities::Vehicle
+        event: Vehicles::Events::VehiclePurchased
       ]
     )
   end
