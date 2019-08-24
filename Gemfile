@@ -19,6 +19,7 @@ group :tools do
 
   gem 'rubocop', '~> 0.74.0'
   gem 'rubocop-daemon', '~> 0.3.1'
+  gem 'travis'
 end
 
 gem 'dry-system', '~> 0.12'
