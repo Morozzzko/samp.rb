@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 require 'dry/system/container'
+require 'dry/system/components'
 require 'dry/inflector'
 
 module NewDawn
   class Container < Dry::System::Container
+    use :env, inferrer: -> { ENV.fetch('ENV', :development).to_sym }
+
     config.root = File.join(__dir__, '../..')
 
     config.name = :new_dawn
