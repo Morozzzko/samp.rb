@@ -27,3 +27,7 @@ gem 'dry-system', '~> 0.12'
 gem 'dry-events', '~> 0.2'
 
 gem 'dry-monads', '~> 1.2', require: 'dry/monads/all'
+
+gem 'rom'
+gem 'rom-sql'
+gem 'sqlite3'
