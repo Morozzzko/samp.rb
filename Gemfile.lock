@@ -98,6 +98,7 @@ GEM
       json
       websocket (~> 1.0)
     rainbow (3.0.0)
+    rake (12.3.3)
     reverse_markdown (1.2.0)
       nokogiri
     rom (5.1.2)
@@ -196,6 +197,7 @@ DEPENDENCIES
   dry-monads (~> 1.2)
   dry-system (~> 0.12)
   pry-byebug (~> 3.7)
+  rake
   rom
   rom-sql
   rspec
