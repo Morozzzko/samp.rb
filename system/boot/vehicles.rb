@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module NewDawn
-  Application.boot(:vehicles) do
+  Container.boot(:vehicles) do
     init do
-      require 'vehicles/events'
+      require 'new_dawn/vehicles/events'
 
       Vehicles::Events.register_events(event_bus)
     end

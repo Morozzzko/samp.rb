@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module NewDawn
-  Application.boot(:users) do
+  Container.boot(:users) do
     init do
-      require 'users/events'
+      require 'new_dawn/users/events'
 
       Users::Events.register_events(event_bus)
     end

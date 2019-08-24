@@ -2,7 +2,7 @@
 
 require 'repository'
 
-require 'users/entities/user'
+require 'new_dawn/users/entities/user'
 
 module NewDawn
   module Users

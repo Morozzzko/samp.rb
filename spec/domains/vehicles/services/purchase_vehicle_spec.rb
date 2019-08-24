@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'vehicles/services/purchase_vehicle'
+require 'new_dawn/vehicles/services/purchase_vehicle'
 
 RSpec.describe NewDawn::Vehicles::Services::PurchaseVehicle do
   subject(:purchase_vehicle) { described_class.new.call }

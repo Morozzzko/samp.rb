@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module NewDawn
-  Application.boot(:bank_accounts) do
+  Container.boot(:bank_accounts) do
     init do
-      require 'bank_accounts/events'
+      require 'new_dawn/bank_accounts/events'
 
       BankAccounts::Events.register_events(event_bus)
     end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'types'
-require 'vehicles/entities/vehicle'
+require 'new_dawn/event'
+require 'new_dawn/vehicles/entities/vehicle'
 
 module NewDawn
   module Vehicles
     module Events
-      class VehicleEvent < Dry::Struct
+      class VehicleEvent < Event
         attribute :vehicle, Types.Instance(Vehicles::Entities::Vehicle)
       end
     end

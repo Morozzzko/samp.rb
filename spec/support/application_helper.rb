@@ -4,7 +4,7 @@ module ApplicationHelper
   require_relative '../../system/boot'
 
   def container
-    NewDawn::Application
+    NewDawn::Container
   end
 
   def event_bus

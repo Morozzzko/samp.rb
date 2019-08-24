@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'bank_accounts/handlers/user_registered'
+require 'new_dawn/bank_accounts/handlers/user_registered'
 
 module NewDawn
   module BankAccounts

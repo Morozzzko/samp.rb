@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'users/services/register_user'
+require 'new_dawn/users/services/register_user'
 
 RSpec.describe NewDawn::Users::Services::RegisterUser do
   subject { container['users.services.register_user'].call(**params) }
@@ -27,5 +27,28 @@ RSpec.describe NewDawn::Users::Services::RegisterUser do
         username: username, email: email
       ]
     )
+  end
+
+  context 'event emitter' do
+    let(:event_handler) do
+      double(:event_handler)
+    end
+
+    before do
+      allow(event_handler).to receive(:on_users_registered).and_return(nil)
+      event_bus.subscribe(event_handler)
+    end
+
+    it 'emits the UserRegistered event with payload' do
+      expect(event_handler).to receive(:on_users_registered).with(Dry::Events::Event.new(
+                                                                    'users.registered',
+                                                                    user: {
+                                                                      username: username,
+                                                                      email: email
+                                                                    }
+                                                                  ))
+
+      subject
+    end
   end
 end

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'new_dawn/application'
-require_relative 'new_dawn/inject'
+require_relative 'new_dawn/container'
 
-NewDawn::Application.finalize!
+NewDawn::Container.finalize!

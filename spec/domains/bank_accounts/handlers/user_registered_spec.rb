@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'bank_accounts/handlers/user_registered'
+require 'new_dawn/bank_accounts/handlers/user_registered'
 
 RSpec.describe NewDawn::BankAccounts::Handlers::UserRegistered, type: :handler do
   subject { described_class.new }
