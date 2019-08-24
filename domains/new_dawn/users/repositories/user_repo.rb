@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require 'repository'
-
+require 'new_dawn/repository'
 require 'new_dawn/users/entities/user'
 
 module NewDawn

@@ -5,6 +5,8 @@ module NewDawn
     init do
       require 'new_dawn/vehicles/events'
 
+      use :event_bus
+
       Vehicles::Events.register_events(event_bus)
     end
 

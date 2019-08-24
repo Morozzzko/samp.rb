@@ -3,8 +3,6 @@
 require 'dry/system/container'
 require 'dry/inflector'
 
-require_relative 'event_bus'
-
 module NewDawn
   class Container < Dry::System::Container
     config.root = File.join(__dir__, '../..')
@@ -19,10 +17,7 @@ module NewDawn
       inflections.acronym('SAMP')
     end
 
-    load_paths! 'lib/new_dawn', 'domains'
-
-    Events = EventBus.new
-    register('event_bus') { Events }
+    load_paths! 'lib', 'domains', 'system'
   end
 
   Inject = Container.injector

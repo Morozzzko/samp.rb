@@ -5,6 +5,8 @@ module NewDawn
     init do
       require 'new_dawn/bank_accounts/events'
 
+      use :event_bus
+
       BankAccounts::Events.register_events(event_bus)
     end
 
