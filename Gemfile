@@ -15,10 +15,10 @@ group :test do
 end
 
 group :tools do
-  gem 'solargraph', '~> 0.36.0'
+  gem 'solargraph', '~> 0.37'
 
-  gem 'rubocop', '~> 0.74.0'
-  gem 'rubocop-daemon', '~> 0.3.1'
+  gem 'rubocop', '~> 0.74'
+  gem 'rubocop-daemon', '~> 0.3'
   gem 'travis'
 end
 
