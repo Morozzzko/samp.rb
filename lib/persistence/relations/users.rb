@@ -4,11 +4,11 @@ module Persistence
   module Relations
     class Users < ROM::Relation[:sql]
       schema(:users) do
-        attribute :uuid, ::Types::UUID
+        attribute :id, ::Types::ID
         attribute :username, ::Types::Username
         attribute :email, ::Types::Email
 
-        primary_key :uuid
+        primary_key :id
       end
     end
   end

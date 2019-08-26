@@ -4,10 +4,10 @@ module Persistence
   module Relations
     class Vehicles < ROM::Relation[:sql]
       schema(:vehicles) do
-        attribute :uuid, ::Types::UUID
-        attribute :user_uuid, ::Types::UUID
+        attribute :id, ::Types::ID
+        attribute :user_id, ::Types::ID
 
-        primary_key :uuid
+        primary_key :id
 
         associations do
           belongs_to :user

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'securerandom'
 module NewDawn
   module Vehicles
     module Repositories
@@ -8,8 +7,6 @@ module NewDawn
         def create!(**params)
           vehicles.changeset(
             :create,
-            uuid: SecureRandom.uuid,
-            user_uuid: SecureRandom.uuid,
             **params
           ).commit
         end
