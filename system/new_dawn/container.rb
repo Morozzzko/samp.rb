@@ -6,7 +6,14 @@ require 'dry/inflector'
 
 module NewDawn
   class Container < Dry::System::Container
-    use :env, inferrer: -> { ENV.fetch('ENV', :development).to_sym }
+    use :env,
+        inferrer: lambda {
+                    if defined?(RSpec)
+                      :test
+                    else
+                      ENV.fetch('ENV', :development).to_sym
+                    end
+                  }
 
     config.root = File.join(__dir__, '../..')
 
