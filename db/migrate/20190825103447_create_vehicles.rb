@@ -3,7 +3,7 @@
 ROM::SQL.migration do
   change do
     create_table :vehicles do
-      column :id, :bigint, primary_key: true
+      primary_key :id, type: :bigserial
 
       foreign_key :user_id, :users, null: false
     end

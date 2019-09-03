@@ -3,7 +3,7 @@
 ROM::SQL.migration do
   change do
     create_table :users do
-      column :id, :bigint, primary_key: true
+      primary_key :id, type: :bigserial
       column :username, String, null: false
       column :email, String, null: false, unique: true
     end

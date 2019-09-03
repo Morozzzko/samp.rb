@@ -6,17 +6,13 @@ require 'new_dawn/users/entities/user'
 module NewDawn
   module Users
     module Repositories
-      class UserRepo < Repository
-        @@count = 0
-
+      class UserRepo < Repository[:users]
         def create!(**params)
-          @@count += 1
-
-          Entities::User[**params]
+          users.changeset(:create, **params).commit
         end
 
         def count
-          @@count
+          users.count
         end
       end
     end

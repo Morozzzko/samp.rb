@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'support/application_helper'
+require_relative 'support/database_helper'
+
 require 'pry'
 require 'simplecov'
 

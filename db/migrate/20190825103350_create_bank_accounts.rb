@@ -3,7 +3,7 @@
 ROM::SQL.migration do
   change do
     create_table :bank_accounts do
-      column :id, :bigint, primary_key: true
+      primary_key :id, type: :bigserial
       column :amount_cents, Integer, null: false
       column :amount_currency, String, null: false
 
