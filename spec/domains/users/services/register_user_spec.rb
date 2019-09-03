@@ -40,13 +40,15 @@ RSpec.describe NewDawn::Users::Services::RegisterUser do
     end
 
     it 'emits the UserRegistered event with payload' do
-      expect(event_handler).to receive(:on_users_registered).with(Dry::Events::Event.new(
-                                                                    'users.registered',
-                                                                    user: {
-                                                                      username: username,
-                                                                      email: email
-                                                                    }
-                                                                  ))
+      expect(event_handler).to receive(
+        :on_users_registered
+      ).with(Dry::Events::Event.new(
+               'users.registered',
+               user: {
+                 username: username,
+                 email: email
+               }
+             ))
 
       subject
     end
