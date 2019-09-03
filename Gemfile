@@ -28,7 +28,7 @@ gem 'dry-events', '~> 0.2'
 
 gem 'dry-monads', '~> 1.2', require: 'dry/monads/all'
 
+gem 'pg'
 gem 'rake'
 gem 'rom'
 gem 'rom-sql'
-gem 'sqlite3'
