@@ -11,6 +11,7 @@ group :test, :development do
 end
 
 group :test do
+  gem 'rom-factory'
   gem 'rspec'
 end
 

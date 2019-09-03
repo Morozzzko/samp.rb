@@ -2,6 +2,7 @@
 
 require_relative 'support/application_helper'
 require_relative 'support/database_helper'
+require_relative 'factory'
 
 require 'pry'
 require 'simplecov'

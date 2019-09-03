@@ -7,7 +7,8 @@ RSpec.describe NewDawn::Vehicles::Services::PurchaseVehicle do
 
   let(:results) { [] }
 
-  let(:owner_id) { 1 }
+  let(:owner) { Factory[:user] }
+  let(:owner_id) { owner.id }
 
   let(:event_handler) do
     lambda do |event|
