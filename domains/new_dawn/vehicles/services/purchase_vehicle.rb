@@ -6,11 +6,10 @@ module NewDawn
       class PurchaseVehicle
         include Inject[
           'event_bus',
-          'vehicles.repositories.user_repo',
           repo: 'vehicles.repositories.vehicle_repo'
         ]
 
-        def call(_owner_id)
+        def call(user_id)
           vehicle = Entities::Vehicle[
             identity: 'abcdef',
             owner: Entities::Individual[full_name: 'John Doe']
@@ -21,7 +20,7 @@ module NewDawn
               event: Events::VehiclePurchased[vehicle: vehicle]
             )
 
-          repo.create!(vehicle)
+          repo.create!(**vehicle, user_id: user_id)
         end
       end
     end

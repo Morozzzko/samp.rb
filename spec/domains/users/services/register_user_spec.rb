@@ -22,10 +22,11 @@ RSpec.describe NewDawn::Users::Services::RegisterUser do
   end
 
   it 'returns user with matching username' do
-    expect(subject).to eql(
-      NewDawn::Users::Entities::User[
-        username: username, email: email
-      ]
+    expect(subject).to be_a(NewDawn::Users::Entities::User)
+    expect(subject.to_h).to match(
+      id: Integer,
+      username: username,
+      email: email
     )
   end
 
@@ -40,15 +41,15 @@ RSpec.describe NewDawn::Users::Services::RegisterUser do
     end
 
     it 'emits the UserRegistered event with payload' do
-      expect(event_handler).to receive(
+      allow(event_handler).to receive(
         :on_users_registered
-      ).with(Dry::Events::Event.new(
-               'users.registered',
-               user: {
-                 username: username,
-                 email: email
-               }
-             ))
+      ) { |user:|
+        expect(user).to match(
+          id: Integer,
+          username: username,
+          email: email
+        )
+      }
 
       subject
     end

@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
-require 'types'
+require 'new_dawn/entity'
 
 module NewDawn
   module Users
     module Entities
-      class User < Dry::Struct
-        attribute :username, Types::Username
-        attribute :email, Types::Email
+      class User < Entity
       end
     end
   end

@@ -7,6 +7,8 @@ module NewDawn
   module Users
     module Repositories
       class UserRepo < Repository[:users]
+        struct_namespace Entities
+
         def create!(**params)
           users.changeset(:create, **params).commit
         end

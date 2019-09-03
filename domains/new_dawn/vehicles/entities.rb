@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
-require_relative 'owner'
-
-require 'new_dawn/entity'
+Dir[File.join(__dir__), 'entities/**/*.rb'] do |path|
+  require_relative path
+end
 
 module NewDawn
   module Vehicles
     module Entities
-      class Vehicle < Entity
-      end
     end
   end
 end

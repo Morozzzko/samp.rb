@@ -3,9 +3,11 @@
 require 'new_dawn/vehicles/services/purchase_vehicle'
 
 RSpec.describe NewDawn::Vehicles::Services::PurchaseVehicle do
-  subject(:purchase_vehicle) { described_class.new.call }
+  subject(:purchase_vehicle) { described_class.new.call(owner_id) }
 
   let(:results) { [] }
+
+  let(:owner_id) { 1 }
 
   let(:event_handler) do
     lambda do |event|
