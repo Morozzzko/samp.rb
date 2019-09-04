@@ -15,9 +15,17 @@ module NewDawn
         def call(username:, email:)
           user = user_repo.create!(username: username, email: email)
 
-          event_bus.trigger('users.registered', Events::UserRegistered[user: user])
+          event_bus.trigger('users.registered', build_event_payload(user))
 
           user
+        end
+
+        private
+
+        def build_event_payload(user)
+          Events::UserRegistered[
+            user: user
+          ]
         end
       end
     end

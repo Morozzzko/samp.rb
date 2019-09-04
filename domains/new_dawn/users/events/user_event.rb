@@ -7,7 +7,11 @@ module NewDawn
   module Users
     module Events
       class UserEvent < Event
-        attribute :user, Types.Instance(Entities::User)
+        attribute :user do
+          attribute :id, Types::ID
+          attribute :username, Types::Username
+          attribute :email, Types::Email
+        end
       end
     end
   end
